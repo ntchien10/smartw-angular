@@ -1,0 +1,59 @@
+<div id="header" class="container-fluid d-flex justify-content-center align-items-center" style="margin-top: 100px;">
+    <img style="width: 301.6px; height: 59.8px;" src="..\assets\image\sMartW 1.png">
+</div>
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-row" style="margin-left: 120px;">
+        <div style=" background-color: #ED1C24; width: 44.2px; height: 5.2px; "></div>
+        <div style="background-color: #EABB46; width: 44.2px; height: 5.2px; "></div>
+        <div style="background-color: #0060AF; width: 44.2px; height: 5.2px; "></div>
+    </div>
+</div>
+<br>
+<form action=" " method="POST " [formGroup]="loginF" (submit)="onSubmit()">
+    <table style="width: 464px; height: 447px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);" class="container-fluid justify-content-center align-items-center">
+        <tbody>
+            <div style="height: 328px; width: 327px; padding: 68px; ">
+                <tr>
+                    <td style="text-align: center; font-weight: bold; font-size: 28px; color: #2D3142; ">Đăng nhập để tiếp tục</td>
+                </tr>
+                <tr>
+                    <td style="color: #919EAB; ">
+                        <div style="margin-top: 20px;">
+                            Tên đăng nhập<br>
+                            <input type="text" formControlName="email" class="form-control border-bottom" id="txtUsername " placeholder="Nhập username ">
+                            <div style="color: red;" *ngIf="loginF['controls']['email'].dirty && loginF['controls']['email'].errors">
+                                <small *ngIf="loginF['controls']['email'].errors['required']"> Username không được để trống</small>
+                                <small *ngIf="loginF['controls']['email'].errors['email']"> Username không đúng định dạng (mail.gmail.com)</small>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: #919EAB;">
+                        <div style="margin-top: 20px;">
+                            Mật khẩu<br>
+                            <div style="position: relative;">
+                                <input type="{{typePassword}}" formControlName="password" class="form-control border-bottom" id="txtPassword" placeholder="Nhập mật khẩu">
+                                <span id="btn-show-eye" class="show-btn" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%);">
+                              <i (click)="showPassword()" class="fas fa-eye"></i>
+                          </span>
+                            </div>
+                            <div style="color: red;" *ngIf="loginF['controls']['password'].dirty && loginF['controls']['password'].errors">
+                                <small *ngIf="loginF['controls']['password'].errors['required']">Username không được để trống</small>
+                                <small *ngIf="loginF['controls']['password'].errors['minLength']">Mật khẩu quá ngắn</small>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="chbSavePassword " id="chbSavePassword " style="color: #2D3142;  margin-top: 20px;"> Lưu mật khẩu</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-primary" style="width: 327px; height: 58px; border-radius: 10px;  margin-top: 20px; ">Đăng nhập</button>
+                    </td>
+                </tr>
+            </div>
+        </tbody>
+    </table>
+</form>

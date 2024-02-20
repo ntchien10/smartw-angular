@@ -1,0 +1,15 @@
+/* Loại bỏ border mặc định */
+
+input {
+    border: none;
+    outline: none;
+    /* Loại bỏ viền focus khi input được focus */
+}
+
+
+/* Thêm border chỉ có viền dưới */
+
+input.border-bottom {
+    border-bottom: 1px solid black;
+    /* Màu và kích thước của viền dưới */
+}
